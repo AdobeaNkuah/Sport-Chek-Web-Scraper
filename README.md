@@ -25,7 +25,7 @@ chrome_options.binary_location = "C:\Program Files\Google\Chrome Beta\Applicatio
 ```
 
 
-## How to Use
+## How to use
 Paste the URLs of the Sport Chek categories to be scraped in the "urls.txt" file line by line. Please note that the URLs used in this script **MUST** contain the producr page number at the end.  
 
 Here are some examples:
