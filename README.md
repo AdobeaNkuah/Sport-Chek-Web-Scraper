@@ -6,7 +6,7 @@ A web scraper which navigates Sport Chek's product category webpages, extracts t
 This script is compatible with Python 3.0 and Windows. To run this script the following prerequisites must be met:
 
 ### Prerequisites
-An installation of the following Python packages:
+An installation of the following Python modules:
 
 ```python
 pip install bs4
