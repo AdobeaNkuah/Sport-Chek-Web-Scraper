@@ -23,7 +23,7 @@ chrome_options.binary_location = "C:\Program Files\Google\Chrome Beta\Applicatio
 ```
 
 ## How to Use
-Paste the URLs of the Sport Chek categories to be scraped in the "urls.txt" file line by line. Please note that the URLs used in this script MUST contain the producr page number at the end.  
+Paste the URLs of the Sport Chek categories to be scraped in the "urls.txt" file line by line. Please note that the URLs used in this script **MUST** contain the producr page number at the end.  
 Here are some examples:
 
 ```text
@@ -45,6 +45,8 @@ To overrite the information saved to the database uncomment the statement below 
 c.execute('''DROP TABLE product_information''')  # Include after table creation to delete table for next testing round
 ```
 
+While the script is running **DO NOT** minimize window of the website or manually interact with the webpage, this will interrupt the script's function.
+
 ## Results
 The results of the web scraping will be printed in the terminal window your Python IDE. This script utilizes the pandas framework to make the results readable.
 
@@ -53,10 +55,9 @@ For example, scraping the products found from this webpage:
 ```text
 https://www.sportchek.ca/categories/shop-by-sport/camping-equipment/tents.html?page=1
 ```
-Will result in this database:
+Creates this database:
 
 ```text
-
     product_number                                            product_name    price product_on_sale                                                              product_categories                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 product_description                                                                                                                                                           image_address
 0        331531359              The North Face Stormbreak 2 Tent Footprint   $59.99              NO                                 Sport Chek Home, Gear, Camping Equipment, Tents                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       This footprint shields your tent floor from the cool, wet, or abrasive-ground. Footprints may also be used in fly-only pitching with most models. Cut precisely to fit the Stormbreak 2 tent.                                                               //fgl.scene7.com/is/image/FGLSportsLtd/331531359_99_a?bgColor=0,0,0,0&resMode=sharp2&op_sharpen=1&hei=520
 1        331928108                    McKINLEY Aluminum Tent Peg - 10 Pack    $7.99              NO  Sport Chek Home, Gear, Camping Equipment, Tents, Tent Footprints & Accessories                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  Keep it in the ground! These aluminum are ideal for doing just that! Capable for any size of tent.                                                               //fgl.scene7.com/is/image/FGLSportsLtd/331928108_99_a?bgColor=0,0,0,0&resMode=sharp2&op_sharpen=1&hei=520
@@ -109,4 +110,3 @@ Will result in this database:
 
 Process finished with exit code 0
 ```
-
