@@ -17,6 +17,7 @@ pip install selenium
 
 An installation of Chrome Beta, the python script will update it automatically.  
 An up to date version of Google Chrome Beta is available here: https://www.google.com/intl/en_ca/chrome/beta/  
+
 The Chrome Beta application should be saved to the file path "C:\Program Files\Google\Chrome Beta\Application", ensure that it exists in this file path or edit the line of code containing the file path in the script accordingly.
 
 ```python
