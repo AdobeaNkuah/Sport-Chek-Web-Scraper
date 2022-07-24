@@ -1,6 +1,7 @@
 # Sport-Chek-Web-Scraper
 A web scraper which navigates Sport Chek's product category webpages, extracts the product information, and exports the data to a SQL database.
 
+
 ## Installation 
 This script is compatible with Python 3.0 and Windows. To run this script the following prerequisites must be met:
 
@@ -22,8 +23,10 @@ The Chrome Beta application should be saved to the file path "C:\Program Files\G
 chrome_options.binary_location = "C:\Program Files\Google\Chrome Beta\Application\chrome.exe"
 ```
 
+
 ## How to Use
 Paste the URLs of the Sport Chek categories to be scraped in the "urls.txt" file line by line. Please note that the URLs used in this script **MUST** contain the producr page number at the end.  
+
 Here are some examples:
 
 ```text
@@ -46,6 +49,7 @@ c.execute('''DROP TABLE product_information''')  # Include after table creation 
 ```
 
 While the script is running **DO NOT** minimize window of the website or manually interact with the webpage, this will interrupt the script's function.
+
 
 ## Results
 The results of the web scraping will be printed in the terminal window your Python IDE. This script utilizes the pandas framework to make the results readable.
