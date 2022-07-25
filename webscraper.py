@@ -39,7 +39,7 @@ def page_navigate(category_url):
     return next_url
 
 
-# Method to load product URLS on category webpage to list
+# Method to load product URLS on category webpage to a list
 def load_product_urls(driver, category_url):
     driver.get(category_url)
 
@@ -105,7 +105,7 @@ def get_product_information(driver, product_urls, category_url):
             product_on_sale = 'NO'
 
         # Get product category
-        product_categories = []  # list for all 4 categories associated with product
+        product_categories = []  # list for all categories associated with product
         category_elements = soup.find_all("a", class_="page-breadcrumb__link")
         for element in category_elements:
             product_categories.append(element.find("span").getText().strip())
@@ -114,7 +114,7 @@ def get_product_information(driver, product_urls, category_url):
         # Get product description
         description_element = soup.find("div", class_="product-description-blurb__text")
 
-        if description_element.find("p"):  # Check Sport Chek devs used 'p' tag to contain product description
+        if description_element.find("p"):  # Check if Sport Chek devs used 'p' tag to contain product description
             product_description = description_element.find("p").getText()
         else:
             product_description = description_element.getText().strip()
