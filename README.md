@@ -3,22 +3,22 @@ A web scraper which navigates Sport Chek's product category webpages, extracts t
 
 
 ## Installation 
-This script is compatible with Python 3.0 and Windows. To run this script the following prerequisites must be met:
+This script is compatible with Python 3.0 and Windows. To run this script the following prerequisites must be met.
 
 ### Prerequisites
 An installation of the following Python modules:
 
 ```python
 pip install bs4
-pip install sqllite3
+pip install sqlite3
 pip install pandas
 pip install selenium
 ```
 
 An installation of Google Chrome Beta, the Python script will update it automatically.  
-An up to date version of Chrome Beta is available here: https://www.google.com/intl/en_ca/chrome/beta/  
+An up-to-date version of Chrome Beta is available here: https://www.google.com/intl/en_ca/chrome/beta/  
 
-The Chrome Beta application should be saved to the file path "C:\Program Files\Google\Chrome Beta\Application", ensure that it exists in this file path or edit the line of code containing the file path accordingly.
+The Chrome Beta application should be saved to the file path "C:\Program Files\Google\Chrome Beta\Application". Ensure that it exists in this file path or edit the line of code containing the file path accordingly.
 
 ```python
 chrome_options.binary_location = "C:\Program Files\Google\Chrome Beta\Application\chrome.exe"
@@ -26,9 +26,7 @@ chrome_options.binary_location = "C:\Program Files\Google\Chrome Beta\Applicatio
 
 
 ## How to use
-Paste the URLs of the Sport Chek categories to be scraped in the "urls.txt" file line by line. Please note that the URLs used in this script **MUST** contain the product page number at the end.  
-
-Here are some examples:
+Paste the URLs of the Sport Chek categories to be scraped in the "urls.txt" file line by line. Please note that the URLs used in this script **MUST** contain the product page number at the end. Here are some examples:
 
 ```text
 https://www.sportchek.ca/categories/women/footwear/hiking-outdoor-shoes.html?page=1
@@ -36,24 +34,24 @@ https://www.sportchek.ca/categories/shop-by-sport/training/mens-training/mens-tr
 https://www.sportchek.ca/categories/electronics/headphones-speakers/headphones.html?page=1
 ```
 
-Upon the first run of the script a database will be created with sqlite3
+Upon the first run of the script a database will be created with SQLite
 
 ```python
 c.execute('''CREATE TABLE product_information(product_number INTEGER PRIMARY KEY, product_name TEXT,
             price TEXT, product_on_sale TEXT, product_categories TEXT, product_description TEXT, image_address TEXT)''')
 ```
 
-To overrite the information saved to the database uncomment the statement below and run the script again.
+To overwrite the information saved to the database uncomment the statement below and run the script again.
 
 ```python
 c.execute('''DROP TABLE product_information''')  # Include after table creation to delete table for next testing round
 ```
 
-While the script is running **DO NOT** minimize website window or manually interact with the webpage, this will interrupt the script's function.
+While the script is running **DO NOT** minimize or manually interact with the webpage, this will interrupt the script's function.
 
 
 ## Results
-The results of the web scraping will be printed in the run window your Python IDE. This script utilizes the pandas framework to make the results readable.
+The results of the web scraping will be printed in the run window of your Python IDE. This script utilizes the pandas framework to make the results readable.
 
 For example, scraping the products found from this webpage:
 
